@@ -1,4 +1,4 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row} from 'react-bootstrap';
 
 import Splash from '../components/Splash';
 import BlogCard from '../components/BlogCard';
@@ -38,6 +38,20 @@ const Home = (props) => {
         {
             id: 4,
             image: image4,
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            date: 'March 24th, 2023',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A iaculis at erat pellentesque.',
+        },
+        {
+            id: 5,
+            image: image1,
+            title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            date: 'March 24th, 2023',
+            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A iaculis at erat pellentesque.',
+        },
+        {
+            id: 6,
+            image: image2,
             title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
             date: 'March 24th, 2023',
             description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. A iaculis at erat pellentesque.',

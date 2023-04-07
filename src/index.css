@@ -59,7 +59,7 @@ code {
 @media (min-width: 767px) {
   .filterBar {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding-top: 10px;
     margin: 10px;
   }
@@ -103,11 +103,23 @@ code {
   justify-content: center;
   align-items: center;
   display: grid;
-  grid-template-columns: repeat(3, 350px);
+  grid-template-columns: repeat(4, 350px);
 }
 
 .cardContainer a {
   text-decoration: none;
+}
+
+@media (max-width: 1427px) {
+  .cardContainer {
+    grid-template-columns: repeat(3, 350px);
+  }
+}
+
+@media (max-width: 1093px) {
+  .cardContainer {
+    grid-template-columns: repeat(2, 350px);
+  }
 }
 
 @media (max-width: 767px) {
@@ -126,4 +138,12 @@ code {
 
 .footerContainer a{
   text-decoration: none;
+}
+
+.contactinfoCard {
+  background-color: white;
+}
+
+.searchHome {
+  margin-left: 10px;
 }

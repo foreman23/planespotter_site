@@ -30,11 +30,11 @@ const FilterBar = (props) => {
         <Button size='large'>Category3</Button>
       </span>
       <span className='hideDesktop filterButtonMobile'>
-      <Menu compact>
-        <Dropdown text='Filter' options={tagOptions} simple item />
-      </Menu>
+        <Menu compact>
+          <Dropdown text='Filter' options={tagOptions} simple item />
+        </Menu>
       </span>
-      <Search className='displayMobile' placeholder='Search...'></Search>
+      <Search className='displayMobile searchHome' placeholder='Search...'></Search>
     </div>
   )
 }

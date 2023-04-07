@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from "./screens/Home";
-import Back from "./screens/Back";
+import Contact from "./screens/Contact";
 
 
 
@@ -16,7 +16,7 @@ function App() {
         <Header></Header>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/back" element={<Back></Back>}></Route>
+          <Route path="/contact" element={<Contact></Contact>}></Route>
         </Routes>
         <div className='footerContainer'>
           <Footer></Footer>

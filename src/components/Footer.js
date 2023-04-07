@@ -10,7 +10,7 @@ const Footer = (props) => {
             </a>
           </List.Item>
           <List.Item>
-            <a href='mailto:brandeeto23@gmail.com'>
+            <a href='mailto:julianelnasser@gmail.com'>
               <List.Icon style={{ fontSize: "40px", color: "#2D2D2D" }} size='large' name='mail'></List.Icon>
             </a>
           </List.Item>
