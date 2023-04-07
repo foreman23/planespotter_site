@@ -1,4 +1,4 @@
-import { Button, Icon, Image, List } from "semantic-ui-react";
+import { Icon, Image, List } from "semantic-ui-react";
 import { Container, Row, Col } from 'react-bootstrap';
 
 import headImg from '../images/headshot.webp';
