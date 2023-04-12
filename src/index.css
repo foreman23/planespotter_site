@@ -74,6 +74,13 @@ code {
   }
 }
 
+.portfolioBar {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  margin: 10px;
+}
+
 @media (max-width: 767px) {
   .hideMobile {
     display: none;
@@ -148,9 +155,30 @@ code {
   margin-left: 10px;
 }
 
-.portfolioButtons {
-  margin: 20px;
-  margin-bottom: 50px;
+.porfolioButtons {
   justify-content: center;
   display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.portfolioPageNums {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.portfolioPageNums  a{
+  text-decoration: none;
+  color: black;
+}
+
+.galleryCard:hover {
+  transform: scale(1.0055);
+}
+
+.portfolioLabel {
+  text-align: center;
+  font-weight: lighter;
+  text-decoration: none;
 }

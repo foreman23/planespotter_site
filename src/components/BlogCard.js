@@ -4,7 +4,7 @@ const BlogCard = (props) => {
     return (
         <a href='/'>
             <div className='blogCard'>
-                <Card style={{ width: '100%' }}>
+                <Card style={{ width: '100%' }} raised>
                     <Image src={props.image}></Image>
                     <Card.Content>
                         <Card.Meta>

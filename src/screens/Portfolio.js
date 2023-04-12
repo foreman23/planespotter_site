@@ -1,4 +1,4 @@
-import { Image, Button, Loader } from "semantic-ui-react";
+import { Image, Button, Loader, Icon, List, Label, Card } from "semantic-ui-react";
 import { Container, Row, Col } from 'react-bootstrap';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { useState } from "react";
@@ -151,21 +151,32 @@ const Portfolio = (props) => {
 
     // Handles displaying images
     const [startIndex, setStartIndex] = useState(0);
-    const imagesPerPage = 9;
+    const imagesPerPage = 12;
 
+    // go forward (imagesPerPage)
     const handleClickNext = () => {
-        setIsLoading(true);
         const nextIndex = startIndex + imagesPerPage;
         if (nextIndex < images.length) {
+            setIsLoading(true);
             setStartIndex(nextIndex);
         }
     }
 
+    // go back (imagesPerPage)
     const handleClickPrev = () => {
-        setIsLoading(true);
         const prevIndex = startIndex - imagesPerPage;
         if (prevIndex >= 0) {
+            setIsLoading(true);
             setStartIndex(prevIndex);
+        }
+    }
+
+    // go to page index
+    const handleIndexClick = (index) => {
+        const nextIndex = (index * imagesPerPage) - imagesPerPage;
+        if (startIndex !== nextIndex) {
+            setIsLoading(true);
+            setStartIndex(nextIndex);
         }
     }
 
@@ -178,6 +189,13 @@ const Portfolio = (props) => {
         setIsLoading(false);
     }
 
+    // Populate page number array
+    let pageNums = [];
+    let pages = (images.length / imagesPerPage)
+    pages = Math.ceil(pages);
+    for (let i = 1; i <= pages; i++) {
+        pageNums.push(i);
+    }
 
     return (
         <div>
@@ -187,20 +205,36 @@ const Portfolio = (props) => {
                 </Row>
                 <Loader active={isLoading} inline='centered' size="small">Loading</Loader>
                 <span className="gallery">
-                <Row>
-                    <ResponsiveMasonry>
-                        <Masonry gutter="5px">
-                            {displayedImages.map((image) => (
-                                <Image onLoad={handleImageLoad} className="galleryImg" rounded key={image.id} src={image.filename} />
-                            ))}
-                        </Masonry>
-                    </ResponsiveMasonry>
-                </Row>
-                </span>
-                <span className="portfolioButtons">
                     <Row>
-                        <Col><Button primary onClick={handleClickPrev}>Prev</Button></Col>
-                        <Col><Button primary onClick={handleClickNext}>Next</Button></Col>
+                        <Col className="porfolioButtons" xs={1}>
+                            <Button onClick={handleClickPrev}><Icon name="chevron left"></Icon></Button>
+                        </Col>
+                        <Col>
+                            <ResponsiveMasonry>
+                                <Masonry gutter="0px">
+                                    {displayedImages.map((image) => (
+                                        <Card className="galleryCard" style={{width: '100%'}}>
+                                            <Image onLoad={handleImageLoad} as='a' href="/portfolio" key={image.id} src={image.filename} />
+                                            <Card.Content style={{backgroundColor: '#e6e6e6'}}>
+                                                <Card.Description style={{textAlign: 'center'}}>
+                                                    {image.description}
+                                                </Card.Description>
+                                            </Card.Content>
+                                        </Card>
+                                    ))}
+                                </Masonry>
+                            </ResponsiveMasonry>
+                        </Col>
+                        <Col className="porfolioButtons" xs={1}>
+                            <Button onClick={handleClickNext}><Icon name="chevron right"></Icon></Button>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <List className='portfolioPageNums' horizontal>
+                            {pageNums.map((index) => (
+                                <List.Item><Button onClick={() => handleIndexClick(index)}>{index}</Button></List.Item>
+                            ))}
+                        </List>
                     </Row>
                 </span>
             </Container>
