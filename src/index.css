@@ -147,3 +147,10 @@ code {
 .searchHome {
   margin-left: 10px;
 }
+
+.portfolioButtons {
+  margin: 20px;
+  margin-bottom: 50px;
+  justify-content: center;
+  display: flex;
+}
