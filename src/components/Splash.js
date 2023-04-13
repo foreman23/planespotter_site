@@ -1,5 +1,5 @@
-import { Container, Row, Col } from 'react-bootstrap';
-import { Button, Image } from 'semantic-ui-react';
+import { Container, Row } from 'react-bootstrap';
+import { Image } from 'semantic-ui-react';
 
 import splashImg from '../images/splashTextLight.webp';
 
