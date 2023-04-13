@@ -23,6 +23,7 @@ const FilterBar = (props) => {
 
   return (
     <div className='filterBar'>
+      <h3>My Blog</h3>
       <span className='hideMobile'>
         <Button primary size='large'>All</Button>
         <Button size='large'>Category1</Button>

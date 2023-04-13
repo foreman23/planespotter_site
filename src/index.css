@@ -24,6 +24,10 @@ code {
   width: 100%;
 }
 
+.navButton:hover {
+  transform: scale(1.025);
+}
+
 .headerList ul{
   list-style: none;
 }
