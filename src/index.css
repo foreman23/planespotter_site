@@ -56,6 +56,18 @@ code {
   background-position: 50% 25%;
 }
 
+.splashPortfolio {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  width: 100%;
+  margin-bottom: 10px;
+  background-image: url("images/splash.webp");
+  background-size: cover;
+  background-position: 50% 26%;
+}
+
 @media (min-width: 767px) {
   .filterBar {
     display: flex;
@@ -76,7 +88,10 @@ code {
 
 .portfolioBar {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
+  align-content: center;
+  align-items: center;
   padding-top: 10px;
   margin: 10px;
 }
@@ -90,6 +105,13 @@ code {
 @media (min-width: 767px) {
   .hideDesktop {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .portfolioButtonsMobile {
+    display: flex;
+    text-align: center;
   }
 }
 
@@ -162,6 +184,12 @@ code {
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  .porfolioButtons {
+    display: none;
+  }
+}
+
 .portfolioPageNums {
   display: flex;
   align-items: center;
@@ -173,7 +201,20 @@ code {
   color: black;
 }
 
-.galleryCard:hover {
+.gallery {
+  margin-top: 100px;
+}
+
+.galleryImage {
+  width: 100%;
+  height: auto;
+  max-height: 190px;
+  object-fit: cover;
+  overflow: hidden;
+  object-position: center center;
+}
+
+.galleryImage:hover {
   transform: scale(1.0055);
 }
 
@@ -182,3 +223,23 @@ code {
   font-weight: lighter;
   text-decoration: none;
 }
+
+.splashButton {
+  width: 20%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+
+.indexPageNums {
+  text-decoration: none;
+  color: black;
+}
+
+.indexPageNums:hover {
+  text-decoration: none;
+  color: grey;
+  cursor: pointer;
+}
+

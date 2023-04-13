@@ -1,8 +1,8 @@
-import { Image, Button, Loader, Icon, List, Label, Card } from "semantic-ui-react";
+import { Image, Button, Loader, Icon, List, Menu, Dropdown, Divider } from "semantic-ui-react";
 import { Container, Row, Col } from 'react-bootstrap';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { useState } from "react";
-import PortFilterBar from '../components/PortFilterBar';
+import SplashPortfolio from '../components/SplashPortfolio';
 
 import img1 from '../images/portfolio/webp/IMG_1128.webp';
 import img2 from '../images/portfolio/webp/IMG_1426.webp';
@@ -146,12 +146,58 @@ const images = [
     // ------------------------------------------------------
 ];
 
+const tagOptions = [
+    {
+        key: '1',
+        text: '3',
+        value: 3,
+    },
+    {
+        key: '2',
+        text: '6',
+        value: 6,
+    },
+    {
+        key: '3',
+        text: '9',
+        value: 9,
+    },
+    {
+        key: '4',
+        text: '12',
+        value: 12,
+    },
+]
+
+const aircraftOptions = [
+    {
+        key: '1',
+        text: 'F-16',
+        value: 'f16',
+    },
+    {
+        key: '2',
+        text: 'F-15',
+        value: 'f15',
+    },
+    {
+        key: '3',
+        text: 'C-17',
+        value: 'c17',
+    },
+    {
+        key: '4',
+        text: 'F-22',
+        value: 'f22',
+    },
+]
+
 
 const Portfolio = (props) => {
 
     // Handles displaying images
     const [startIndex, setStartIndex] = useState(0);
-    const imagesPerPage = 12;
+    const [imagesPerPage, setImagesPerPage] = useState(12);
 
     // go forward (imagesPerPage)
     const handleClickNext = () => {
@@ -197,30 +243,49 @@ const Portfolio = (props) => {
         pageNums.push(i);
     }
 
+    // Handle change to images per page
+    const handleFilterAmount = (event, { value }) => {
+        setImagesPerPage(value)
+    }
+
     return (
         <div>
+            <SplashPortfolio></SplashPortfolio>
             <Container>
                 <Row>
-                    <PortFilterBar></PortFilterBar>
+                    <div className='portfolioBar'>
+                        <h5 style={{marginRight: '10px'}}>Page: {Math.ceil((startIndex + 1) / imagesPerPage)} of {Math.ceil(images.length / imagesPerPage)}</h5>
+                        <span>
+                            <Dropdown 
+                            placeholder="Aircraft"
+                            multiple
+                            search
+                            selection
+                            fluid
+                            style={{width: '30vw', marginRight: '10px'}}
+                            options={aircraftOptions}
+                            >
+                            </Dropdown>
+                        </span>
+
+                        <Menu compact>
+                            <Dropdown onChange={handleFilterAmount} style={{ backgroundColor: '#e6e6e6' }} text={imagesPerPage} options={tagOptions} simple item />
+                        </Menu>
+
+                    </div>
+                <Divider></Divider>
                 </Row>
                 <Loader active={isLoading} inline='centered' size="small">Loading</Loader>
                 <span className="gallery">
-                    <Row>
+                    <Row style={{ marginTop: '10px' }}>
                         <Col className="porfolioButtons" xs={1}>
                             <Button onClick={handleClickPrev}><Icon name="chevron left"></Icon></Button>
                         </Col>
                         <Col>
                             <ResponsiveMasonry>
-                                <Masonry gutter="0px">
+                                <Masonry gutter="10px">
                                     {displayedImages.map((image) => (
-                                        <Card className="galleryCard" style={{width: '100%'}}>
-                                            <Image onLoad={handleImageLoad} as='a' href="/portfolio" key={image.id} src={image.filename} />
-                                            <Card.Content style={{backgroundColor: '#e6e6e6'}}>
-                                                <Card.Description style={{textAlign: 'center'}}>
-                                                    {image.description}
-                                                </Card.Description>
-                                            </Card.Content>
-                                        </Card>
+                                        <Image className="galleryImage" onLoad={handleImageLoad} as='a' href="/portfolio" key={image.id} src={image.filename} />
                                     ))}
                                 </Masonry>
                             </ResponsiveMasonry>
@@ -230,9 +295,13 @@ const Portfolio = (props) => {
                         </Col>
                     </Row>
                     <Row>
+                        <Col className="hideDesktop portfolioButtonsMobile"><Button onClick={handleClickPrev}><Icon name="chevron left"></Icon></Button></Col>
+                        <Col className="hideDesktop portfolioButtonsMobile"><Button onClick={handleClickNext}><Icon name="chevron right"></Icon></Button></Col>
+                    </Row>
+                    <Row style={{ marginTop: '10px' }}>
                         <List className='portfolioPageNums' horizontal>
                             {pageNums.map((index) => (
-                                <List.Item><Button onClick={() => handleIndexClick(index)}>{index}</Button></List.Item>
+                                <List.Item className="indexPageNums" onClick={() => handleIndexClick(index)}>{index}</List.Item>
                             ))}
                         </List>
                     </Row>

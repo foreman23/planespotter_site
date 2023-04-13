@@ -1,7 +1,13 @@
+import { Container, Row } from 'react-bootstrap';
+
 const Splash = (props) => {
     return (
       <div className='splash'>
-        <h1 style={{color: 'white'}}>JULIAN ELNASSER</h1>
+        <Container fluid>
+          <Row>
+          <h1 style={{color: 'white', textAlign: 'center'}}>JULIAN ELNASSER</h1>
+          </Row>
+        </Container>
       </div>
     )
   }
