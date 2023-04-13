@@ -190,6 +190,19 @@ code {
   }
 }
 
+.mobilePortfolioButtons {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .mobilePortfolioButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
+
 .portfolioPageNums {
   display: flex;
   align-items: center;
@@ -240,6 +253,19 @@ code {
 .indexPageNums:hover {
   text-decoration: none;
   color: grey;
+  cursor: pointer;
+}
+
+.displayPerPage {
+  display: flex;
+  justify-content: center;
+  margin-right: 5px;
+  align-self: center;
+  align-items: center;
+  text-align: center;
+}
+
+.chevronButton {
   cursor: pointer;
 }
 
