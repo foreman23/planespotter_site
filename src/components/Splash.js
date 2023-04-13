@@ -1,11 +1,16 @@
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
+import { Button, Image } from 'semantic-ui-react';
+
+import splashImg from '../images/splashTextLight.webp';
 
 const Splash = (props) => {
     return (
       <div className='splash'>
         <Container fluid>
           <Row>
-          <h1 style={{color: 'white', textAlign: 'center'}}>JULIAN ELNASSER</h1>
+          <Image style={{width: '500px', display: 'flex', justifyContent: 'center', margin: 'auto'}} src={splashImg}></Image>
+          </Row>
+          <Row>
           </Row>
         </Container>
       </div>

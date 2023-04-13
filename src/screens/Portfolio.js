@@ -2,7 +2,6 @@ import { Image, Button, Loader, Icon, List, Menu, Dropdown } from "semantic-ui-r
 import { Container, Row, Col } from 'react-bootstrap';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { useState } from "react";
-import SplashPortfolio from '../components/SplashPortfolio';
 
 import img1 from '../images/portfolio/webp/IMG_1128.webp';
 import img2 from '../images/portfolio/webp/IMG_1426.webp';
@@ -237,7 +236,6 @@ const Portfolio = (props) => {
 
     return (
         <div>
-            <SplashPortfolio></SplashPortfolio>
             <Container>
                 <Row>
                     <div className='portfolioBar'>
