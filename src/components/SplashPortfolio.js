@@ -5,7 +5,6 @@ const SplashPortfolio = (props) => {
       <div className='splashPortfolio'>
         <Container fluid>
           <Row>
-          <h1 style={{color: 'white', textAlign: 'center'}}></h1>
           </Row>
         </Container>
       </div>
