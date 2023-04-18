@@ -1,4 +1,4 @@
-import { Image, Button, Loader, Icon, List, Menu, Dropdown } from "semantic-ui-react";
+import { Image, Button, Loader, Icon, List, Menu, Dropdown, Header } from "semantic-ui-react";
 import { Container, Row, Col } from 'react-bootstrap';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { useState } from "react";
@@ -236,7 +236,8 @@ const Portfolio = (props) => {
 
     return (
         <div>
-            <Container>
+            <Container className="portfolioContainer">
+                <Header as={'h1'} style={{display: 'flex', margin: 'auto', justifyContent: 'center', marginBottom: '10px'}}>Julian Elnasser</Header>
                 <Row>
                     <div className='portfolioBar'>
                         <h5 style={{ marginRight: '10px' }}>Page: {Math.ceil((startIndex + 1) / imagesPerPage)} of {Math.ceil(images.length / imagesPerPage)}</h5>

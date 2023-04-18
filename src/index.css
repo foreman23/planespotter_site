@@ -97,6 +97,7 @@ code {
   align-content: center;
   align-items: center;
   padding-top: 10px;
+  margin-bottom: 15px;
 }
 
 @media (max-width: 767px) {
@@ -272,3 +273,27 @@ code {
   cursor: pointer;
 }
 
+.contactCard {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.contactForm {
+  background-color: whitesmoke;
+  padding: 30px;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.contactContainer {
+  margin-top: 70px;
+  margin-bottom: 150px;
+}
+
+.portfolioContainer {
+  margin-top: 35px;
+  margin-bottom: 75px;
+}
