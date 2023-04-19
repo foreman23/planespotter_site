@@ -1,4 +1,4 @@
-import { Button, Search, Dropdown, Menu } from 'semantic-ui-react';
+import { Button, Search, Dropdown, Menu, Header } from 'semantic-ui-react';
 
 const FilterBar = (props) => {
 
@@ -23,8 +23,8 @@ const FilterBar = (props) => {
 
   return (
     <div className='filterBar'>
-      <h3>My Blog</h3>
       <span className='hideMobile'>
+        <span className='hideTablet'><Header style={{display: 'inline-flex', paddingRight: '30px', alignItems: 'center', marginTop: 'auto', marginBottom: 'auto'}}  as={'h2'}>My Blog</Header></span>
         <Button primary size='large'>All</Button>
         <Button size='large'>Category1</Button>
         <Button size='large'>Category2</Button>

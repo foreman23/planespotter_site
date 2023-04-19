@@ -1,4 +1,4 @@
-import { Image, Button, Loader, Icon, List, Menu, Dropdown, Header } from "semantic-ui-react";
+import { Image, Button, Loader, Icon, List, Menu, Dropdown } from "semantic-ui-react";
 import { Container, Row, Col } from 'react-bootstrap';
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
 import { useState } from "react";
@@ -31,6 +31,8 @@ import img18 from '../images/portfolio/webp/IMG_9173.webp';
 
 //import img21 from '../images/portfolio/webp/IMG_9239.webp';
 //import img22 from '../images/portfolio/webp/IMG_9593.webp';
+
+import splashImg from '../images/splashText.webp';
 
 const images = [
     {
@@ -147,11 +149,11 @@ const images = [
 
 const tagOptions = []
 
-for (let i = 3; i <= 24; i+=3) {
+for (let i = 3; i <= 24; i += 3) {
     tagOptions.push({
         key: i.toString(),
         text: i.toString(),
-        value : i,
+        value: i,
     })
 }
 
@@ -236,8 +238,10 @@ const Portfolio = (props) => {
 
     return (
         <div>
+            <div style={{ marginTop: '20px', marginBottom: '30px' }}>
+                <Image taget='_blank' href='/' style={{ width: '300px', display: 'flex', justifyContent: 'center', margin: 'auto', padding: '10px' }} src={splashImg}></Image>
+            </div>
             <Container className="portfolioContainer">
-                <Header as={'h1'} style={{display: 'flex', margin: 'auto', justifyContent: 'center', marginBottom: '10px'}}>Julian Elnasser</Header>
                 <Row>
                     <div className='portfolioBar'>
                         <h5 style={{ marginRight: '10px' }}>Page: {Math.ceil((startIndex + 1) / imagesPerPage)} of {Math.ceil(images.length / imagesPerPage)}</h5>
@@ -269,8 +273,8 @@ const Portfolio = (props) => {
                             <Icon size="big" className="chevronButton" onClick={handleClickPrev} name="chevron left"></Icon>
                         </Col>
                         <span className="hideDesktop mobilePortfolioButtons">
-                            <Button onClick={handleClickPrev}><Icon name="chevron left"></Icon></Button>
-                            <Button onClick={handleClickNext}><Icon name="chevron right"></Icon></Button>
+                            <Button onClick={handleClickPrev}><Icon name="chevron left"></Icon>Prev</Button>
+                            <Button onClick={handleClickNext}>Next<Icon name="chevron right"></Icon></Button>
                         </span>
                         <Col>
                             <ResponsiveMasonry>
@@ -286,8 +290,8 @@ const Portfolio = (props) => {
                         </Col>
                     </Row>
                     <span className="hideDesktop mobilePortfolioButtons">
-                        <Button onClick={handleClickPrev}><Icon name="chevron left"></Icon></Button>
-                        <Button onClick={handleClickNext}><Icon name="chevron right"></Icon></Button>
+                        <Button onClick={handleClickPrev}><Icon name="chevron left"></Icon>Prev</Button>
+                        <Button onClick={handleClickNext}>Next<Icon name="chevron right"></Icon></Button>
                     </span>
                     <Row style={{ marginTop: '10px' }}>
                         <List className='portfolioPageNums' horizontal>

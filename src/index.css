@@ -90,6 +90,12 @@ code {
   }
 }
 
+@media (max-width: 987px) {
+  .hideTablet {
+    display: none;
+  }
+}
+
 .portfolioBar {
   display: flex;
   justify-content: center;
@@ -273,6 +279,11 @@ code {
   cursor: pointer;
 }
 
+.portfolioContainer {
+  margin-top: 35px;
+  margin-bottom: 75px;
+}
+
 .contactCard {
   display: flex;
   justify-content: center;
@@ -293,7 +304,21 @@ code {
   margin-bottom: 150px;
 }
 
-.portfolioContainer {
-  margin-top: 35px;
-  margin-bottom: 75px;
+@media (max-width: 767px) {
+  .contactContainer {
+    margin-top: 10px;
+    margin-bottom: 55px;
+  }
+}
+
+@media (max-width: 767px) {
+  .formButton {
+    padding-top: 10px;
+    text-align: center;
+  }
+}
+
+#root > div > div:nth-child(2) > div > div > div:nth-child(1) > span > div > div > div.ui.list > a {
+  text-decoration: none;
+  color: grey;
 }

@@ -34,7 +34,7 @@ const About = (props) => {
                 <Form.Input placeholder='Subject'></Form.Input>
                 <Header as={'h6'}>Message</Header>
                 <Form.TextArea></Form.TextArea>
-                <Form.Button>Send</Form.Button>
+                <Form.Button className="formButton">Send</Form.Button>
               </Form>
             </span>
           </Col>
