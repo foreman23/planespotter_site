@@ -231,16 +231,23 @@ code {
 }
 
 .galleryImage {
-  width: 100%;
-  height: auto;
-  max-height: 190px;
-  object-fit: cover;
-  overflow: hidden;
-  object-position: center center;
+  position: relative;
 }
 
-.galleryImage:hover {
-  transform: scale(1.0055);
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  color: white;
+  transition: opacity 0.5s ease;
+}
+
+.galleryImage:hover .overlay {
+  opacity: 0.6;
 }
 
 .portfolioLabel {
@@ -326,5 +333,6 @@ code {
 }
 
 .fullImage {
+  width: 95%;
   margin: auto;
 }

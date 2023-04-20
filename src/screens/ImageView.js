@@ -22,9 +22,9 @@ const ImageView = (props) => {
     }
 
     return (
-        <div>
+        <div style={{ backgroundColor: '#D6D6D6', paddingBottom: '30px', marginBottom: '30px' }}>
             <Container>
-                <Row style={{ paddingTop: '20px' }}>
+                <Row style={{ paddingTop: '25px' }}>
                     <span className="portfolioButtons">
                         <Button href='/portfolio'>Back</Button>
                         {renderPrev ? (
@@ -40,14 +40,16 @@ const ImageView = (props) => {
                     </span>
                 </Row>
                 <Row>
-                    <Image size="massive" className="fullImage" key={image.id} src={image.filename} />
-                </Row>
-                <Row>
+                    <Col xs={12}>
+                        <Image style={{boxShadow: '2px 4px 8px 0 rgba(0, 0, 0, 0.2)'}} size="massive" className="fullImage" key={image.id} src={image.filename} />
+                    </Col>
                     <Col>
-                        <List style={{textAlign: 'center', margin: '20px'}}>
-                            <List.Item><List.Header as={'h4'}>{image.title}</List.Header></List.Item>
-                            <List.Item><List.Description>{image.description}</List.Description></List.Item>
-                        </List>
+                        <Row>
+                            <List.Item><List.Header style={{marginTop: '20px', textAlign: 'center'}} as={'h3'}>{image.title}</List.Header></List.Item>
+                        </Row>
+                        <Row>
+                            <List.Item><List.Description style={{textAlign: 'center', fontSize: 'medium', fontFamily: 'lato', padding: '10px', paddingBottom: '10px'}}>{image.description}</List.Description></List.Item>
+                        </Row>
                     </Col>
                 </Row>
             </Container>

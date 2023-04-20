@@ -43,9 +43,12 @@ const aircraftOptions = [
 
 const Portfolio = (props) => {
 
+    // UNCOMMENT THIS LATER
+    //let activeFilters = [];
+
     // Handles displaying images
     const [startIndex, setStartIndex] = useState(0);
-    const [imagesPerPage, setImagesPerPage] = useState(24);
+    const [imagesPerPage, setImagesPerPage] = useState(18);
 
     // go forward (imagesPerPage)
     const handleClickNext = () => {
@@ -74,7 +77,17 @@ const Portfolio = (props) => {
         }
     }
 
-    const displayedImages = images.slice(startIndex, startIndex + imagesPerPage);
+    let displayedImages = images.slice(startIndex, startIndex + imagesPerPage);
+
+    // // **IMPLEMENT FILTER (use localStorage)**
+    // displayedImages = displayedImages.filter(image => {
+    //     if (activeFilters.length !== 0) {
+    //         return activeFilters.some(filter => image.title === filter);
+    //     }
+    //     else {
+    //         return displayedImages;
+    //     }
+    // })
 
     // Handles displaying load progress
     const [isLoading, setIsLoading] = useState(true);
@@ -95,6 +108,12 @@ const Portfolio = (props) => {
     const handleFilterAmount = (event, { value }) => {
         setImagesPerPage(value)
     }
+
+    // // Handle filter aircraft
+    // const handleFilterAircraft = (event, { value }) => {
+    //     activeFilters = value;
+    //     window.location.reload();
+    // }
 
     return (
         <div>
@@ -135,9 +154,12 @@ const Portfolio = (props) => {
                         </span>
                         <Col>
                             <ResponsiveMasonry>
-                                <Masonry gutter="3px">
+                                <Masonry gutter="10px">
                                     {displayedImages.map((image) => (
-                                        <Image className="galleryImage" onLoad={handleImageLoad} as='a' href={`/image/${image.id}`} key={image.id} src={image.filename} />
+                                        <div className="galleryImage">
+                                        <Image onLoad={handleImageLoad} key={image.id} src={image.thumb} />
+                                        <a href={`/image/${image.id}`}><div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}} className="overlay"><h2 style={{fontFamily: 'lato'}}>{image.title}</h2></div></a>
+                                        </div>
                                     ))}
                                 </Masonry>
                             </ResponsiveMasonry>
