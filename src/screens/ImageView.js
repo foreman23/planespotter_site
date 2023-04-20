@@ -24,9 +24,9 @@ const ImageView = (props) => {
     return (
         <div>
             <Container>
-                <Row style={{}}>
+                <Row style={{ paddingTop: '20px' }}>
                     <span className="portfolioButtons">
-                        <Button style={{}} href='/portfolio'>Back</Button>
+                        <Button href='/portfolio'>Back</Button>
                         {renderPrev ? (
                             <Button href={`/image/${image.id - 1}`}><Icon name="chevron left"></Icon>Prev</Button>
                         ) :

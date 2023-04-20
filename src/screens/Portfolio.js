@@ -98,13 +98,13 @@ const Portfolio = (props) => {
 
     return (
         <div>
-            <div style={{ marginTop: '20px', marginBottom: '30px' }}>
-                <Image taget='_blank' href='/' style={{ width: '300px', display: 'flex', justifyContent: 'center', margin: 'auto', padding: '10px' }} src={splashImg}></Image>
+            <div style={{ marginTop: '50px', marginBottom: '20px' }}>
+                <Image taget='_blank' href='/' style={{ width: '350px', display: 'flex', justifyContent: 'center', margin: 'auto', padding: '0px' }} src={splashImg}></Image>
             </div>
             <Container className="portfolioContainer">
-                <Row>
+                <Row className="portfolioBar" style={{display: 'flex', backgroundColor: '#D6D6D6', paddingTop: '10px', paddingBottom: '10px', borderRadius: '5px', margin: 'auto'}}>
                     <div className='portfolioBar'>
-                        <h5 style={{ marginRight: '10px' }}>Page: {Math.ceil((startIndex + 1) / imagesPerPage)} of {Math.ceil(images.length / imagesPerPage)}</h5>
+                        <span style={{ marginRight: '20px', fontWeight: 'lighter', color: '#565656' }}>Page: {Math.ceil((startIndex + 1) / imagesPerPage)} of {Math.ceil(images.length / imagesPerPage)}</span>
                         <span>
                             <Dropdown
                                 placeholder="Aircraft"
@@ -119,19 +119,19 @@ const Portfolio = (props) => {
                         </span>
 
 
-                        <span className="displayPerPage">Per page:</span>
+                        <span style={{fontWeight: 'lighter', color: '#565656'}} className="displayPerPage">Per page:</span>
                         <Menu compact>
-                            <Dropdown onChange={handleFilterAmount} style={{ backgroundColor: '#e6e6e6' }} text={imagesPerPage} options={tagOptions} simple item />
+                            <Dropdown onChange={handleFilterAmount} style={{ backgroundColor: '#e6e6e6', color: '#565656' }} text={imagesPerPage} options={tagOptions} simple item />
                         </Menu>
 
                     </div>
                 </Row>
                 <Loader active={isLoading} inline='centered' size="small">Loading</Loader>
                 <span className="gallery">
-                    <Row style={{ marginTop: '10px' }}>
+                    <Row style={{ marginTop: '20px' }}>
                         <span className="portfolioButtons">
-                            <Button onClick={handleClickPrev}><Icon name="chevron left"></Icon>Prev</Button>
-                            <Button onClick={handleClickNext}>Next<Icon name="chevron right"></Icon></Button>
+                            <Button style={{backgroundColor: '#D7D7D7'}} onClick={handleClickPrev}><Icon name="chevron left"></Icon>Prev</Button>
+                            <Button style={{backgroundColor: '#D7D7D7'}} onClick={handleClickNext}>Next<Icon name="chevron right"></Icon></Button>
                         </span>
                         <Col>
                             <ResponsiveMasonry>
@@ -144,8 +144,8 @@ const Portfolio = (props) => {
                         </Col>
                     </Row>
                     <span className="portfolioButtons">
-                        <Button onClick={handleClickPrev}><Icon name="chevron left"></Icon>Prev</Button>
-                        <Button onClick={handleClickNext}>Next<Icon name="chevron right"></Icon></Button>
+                        <Button style={{backgroundColor: '#D7D7D7'}} onClick={handleClickPrev}><Icon name="chevron left"></Icon>Prev</Button>
+                        <Button style={{backgroundColor: '#D7D7D7'}} onClick={handleClickNext}>Next<Icon name="chevron right"></Icon></Button>
                     </span>
                     <Row style={{ marginTop: '10px' }}>
                         <List className='portfolioPageNums' horizontal>
