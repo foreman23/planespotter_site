@@ -24,11 +24,13 @@ code {
   width: 100%;
 }
 
+
+
 .navButton:hover {
   transform: scale(1.025);
 }
 
-.headerList ul{
+.headerList ul {
   list-style: none;
 }
 
@@ -175,7 +177,7 @@ code {
   margin: 10px;
 }
 
-.footerContainer a{
+.footerContainer a {
   text-decoration: none;
 }
 
@@ -187,29 +189,22 @@ code {
   margin-left: 10px;
 }
 
-.porfolioButtons {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  text-align: center;
-}
-
 @media (max-width: 767px) {
-  .porfolioButtons {
-    display: none;
-  }
-}
-
-.mobilePortfolioButtons {
-  display: none;
-}
-
-@media (max-width: 767px) {
-  .mobilePortfolioButtons {
+  .portfolioButtons {
     display: flex;
     justify-content: center;
     margin-top: 15px;
     margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 767px) {
+  .portfolioButtons {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
   }
 }
 
@@ -219,7 +214,7 @@ code {
   text-align: center;
 }
 
-.portfolioPageNums  a{
+.portfolioPageNums a {
   text-decoration: none;
   color: black;
 }
@@ -318,7 +313,11 @@ code {
   }
 }
 
-#root > div > div:nth-child(2) > div > div > div:nth-child(1) > span > div > div > div.ui.list > a {
+#root>div>div:nth-child(2)>div>div>div:nth-child(1)>span>div>div>div.ui.list>a {
   text-decoration: none;
   color: grey;
+}
+
+.fullImage {
+  margin: auto;
 }
